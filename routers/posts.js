@@ -12,11 +12,11 @@ router.get("/", (req, res) => {
     // dalla query string prendo il tag da filtrare
     const tagName = req.query.tags;
     // inizializzo postList con tutti i post
-    let postList = [...allPosts.posts];
+    let postList = [...allPosts];
 
     // se è stato specificato un tag, filtro i post in base a quel tag
     if (tagName) {
-        postList = allPosts.posts.filter((post) => {
+        postList = allPosts.filter((post) => {
             // filtro i post in base ai tag specificati
             return post.tags.includes(tagName.toLowerCase());
         });
