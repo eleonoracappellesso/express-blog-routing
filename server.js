@@ -5,21 +5,20 @@ const PORT = 3000;
 // creo una istanza del server
 const app = express();
 
+const postsRouter = require("./routers/posts");
+
 // deifinisco il percorso per gli asset statici
 app.use(express.static("public"));
 
-//const allPosts = require('./data/posts');
-const postsRouter = require("./routers/posts");
-
-// rotte
+// ROOTS
 app.get('/', (req, res) => {
     res.send("Server del mio blog");
 });
 
-// rotte api
+// Api root
 app.use("/posts", postsRouter);
 
-// rotta di fallback
+// Fallback root
 app.all('*', (req, res) => {
     res.status(404).send('<h1>Error 404 - Not Found</h1>');
 });
