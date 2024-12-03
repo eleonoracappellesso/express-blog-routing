@@ -47,7 +47,7 @@ router.get("/:id", (req, res) => {
         res.status(404);
         res.json({
             success: false,
-            message: "Il post è inesistente",
+            message: `Il post con l'id ${postId} è inesistente`,
         });
     }
 });
