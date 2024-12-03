@@ -1,13 +1,11 @@
 // importo express 
-const { count } = require('console');
 const express = require('express');
-const { title } = require('process');
 // specifico la porta
 const PORT = 3000;
 // creo una istanza del server
 const app = express();
 
-// deifinisco la cartella per gli asset statici
+// deifinisco il percorso per gli asset statici
 app.use(express.static("public"));
 
 //const allPosts = require('./data/posts');
